@@ -26,10 +26,7 @@ void main() {
     await tester.tap(find.text('='));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '4',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '4');
   });
 
   testWidgets('clears the display', (WidgetTester tester) async {
@@ -39,10 +36,7 @@ void main() {
     await tester.tap(find.text('AC'));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '0',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '0');
   });
 
   testWidgets('handles division by zero', (WidgetTester tester) async {
@@ -54,10 +48,7 @@ void main() {
     await tester.tap(find.text('='));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      'Error',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, 'Error');
   });
 
   testWidgets('calculates subtraction', (WidgetTester tester) async {
@@ -69,10 +60,7 @@ void main() {
     await tester.tap(find.text('='));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '5',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '5');
   });
 
   testWidgets('calculates multiplication', (WidgetTester tester) async {
@@ -84,10 +72,7 @@ void main() {
     await tester.tap(find.text('='));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '42',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '42');
   });
 
   testWidgets('calculates decimal values', (WidgetTester tester) async {
@@ -103,10 +88,7 @@ void main() {
     await tester.tap(find.text('='));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '4',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '4');
   });
 
   testWidgets('converts a number to a percent', (WidgetTester tester) async {
@@ -117,9 +99,6 @@ void main() {
     await tester.tap(find.text('%'));
     await tester.pump();
 
-    expect(
-      tester.widget<Text>(find.byKey(const Key('display'))).data,
-      '0.5',
-    );
+    expect(tester.widget<Text>(find.byKey(const Key('display'))).data, '0.5');
   });
 }
